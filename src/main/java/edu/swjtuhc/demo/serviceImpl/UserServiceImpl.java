@@ -15,7 +15,6 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public int register(SysUser user) {
 		// TODO Auto-generated method stub
-		
 		//调用mapper实现注册
 		SysUser u0 = userMapper.selectUserByUsername(user.getUsername());
 		System.out.println(user);
