@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package edu.swjtuhc.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,10 +30,3 @@ public class UserController {
 	}
 	
 }
-=======
-package edu.swjtuhc.demo.controller;
-
-public class UserController {
-
-}
->>>>>>> branch 'master' of https://github.com/758772410/webapp.git
