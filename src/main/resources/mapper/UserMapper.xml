@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -20,3 +21,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 </mapper>
+=======
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	" http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.swjtuhc.demo.mapper.UserMapper">
+	<resultMap type="edu.swjtuhc.demo.model.SysUser" id="user_result">
+	<result column="username" property="username" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	<result column="password" property="password" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	<result column="name" property="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	<result column="age" property="age" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+	<result column="gift" property="gift" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+	<select id="selectAllUsers" parameterType="java.lang.String" resultMap="user_result">
+	         select * from sysuser where username = #{username}
+	</select>
+	
+</mapper>
+>>>>>>> branch 'master' of https://github.com/758772410/webapp.git

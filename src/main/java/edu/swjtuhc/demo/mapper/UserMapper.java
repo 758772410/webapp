@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package edu.swjtuhc.demo.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -12,3 +13,10 @@ public interface UserMapper {
 	
 	
 }
+=======
+package edu.swjtuhc.demo.mapper;
+
+public interface UserMapper {
+
+}
+>>>>>>> branch 'master' of https://github.com/758772410/webapp.git
