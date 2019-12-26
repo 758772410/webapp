@@ -1,33 +1,26 @@
 package edu.swjtuhc.demo.serviceImpl;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.swjtuhc.demo.mapper.UserMapper;
 import edu.swjtuhc.demo.model.SysUser;
 import edu.swjtuhc.demo.service.UserService;
-
 @Service
 public class UserServiceImpl implements UserService{
 	@Autowired
 	UserMapper userMapper;
-	
 	@Override
 	public int register(SysUser user) {
 		// TODO Auto-generated method stub
-		
-		//调用mapper实现注册
-		SysUser u0 = userMapper.selectUserByUsername(user.getUsername());
-		System.out.println(user);
-		int i = -1;
-		if (u0==null) {
-			System.out.println(user);
-
-			i = userMapper.insertUser(user);
+		SysUser u1 = userMapper.selectUserByUsername(user.getUsername());
+		int i = 1;
+		if (u1==null) {
+			i=userMapper.insertUser(user);
 		}else {
-			i = 0;
+			i=2;
 		}
-		return 0;
+		return i;
 	}
-
 }
