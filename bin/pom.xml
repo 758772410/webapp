@@ -22,7 +22,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
 	<dependencies>
 		<dependency>
-		<groupId>net.sf.json-lib</groupId>
+　　		<groupId>net.sf.json-lib</groupId>
 　　		<artifactId>json-lib</artifactId>
 　　		<version>2.4</version>
 　　		<classifier>jdk15</classifier>   <!-- 重要 -->
@@ -55,6 +55,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		</dependency>
 	</dependencies>
 
-	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
