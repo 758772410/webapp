@@ -10,5 +10,12 @@
 		select * from webapp
 		where username=#{username}
 	</select>
-	
+	<select id="userLogin" parameterType="java.lang.String"  resultType="edu.swjtuhc.demo.model.SysUser">
+	     select * from webapp
+	     where username=#{username} 
+	</select>
+	<select id="selectUserBySysUser" parameterType="java.lang.String"  resultType="edu.swjtuhc.demo.model.SysUser">
+		select * from webapp 
+		where username=#{username}
+	</select>
 </mapper>

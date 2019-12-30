@@ -23,4 +23,14 @@ public class UserServiceImpl implements UserService{
 		}
 		return i;
 	}
+	@Override
+	public SysUser userLogin(String username) {
+		// TODO Auto-generated method stub
+		return userMapper.userLogin(username);
+	}
+	@Override
+	public SysUser selectUser(String username) {
+		// TODO Auto-generated method stub
+		return userMapper.selectUserBySysUser(username);
+	}
 }

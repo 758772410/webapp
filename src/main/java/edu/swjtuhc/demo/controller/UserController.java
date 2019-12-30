@@ -13,11 +13,37 @@ import netscape.javascript.JSObject;
 public class UserController {
 	    @Autowired
 	    UserService userService;
+	    
 		@RequestMapping("/register")
 		public JSONObject register(@RequestBody SysUser user) {
 			JSONObject result = new JSONObject();
 			int i=userService.register(user);
 			result.put("state",i);			
 			return result;
+		}
+		@RequestMapping("/login")
+		public JSONObject login(@RequestBody SysUser user) {
+			JSONObject result = new JSONObject();
+			SysUser user1=userService.userLogin(user.getUsername());
+			if (user1==null) {
+				result.put("state","没有这个用户");
+				return result;
+			}else {
+				if (user1.getPassword().equals(user.getPassword())) {
+					result.put("state", "登录成功");
+					return result;
+				}else {
+					result.put("state", "密码错误");
+					return result;
+				}
+			}
+		}
+		@RequestMapping("/data")
+		public JSONObject selectUser(@RequestBody SysUser user) {
+			JSONObject result = new JSONObject();
+			SysUser user2=userService.selectUser(user.getUsername());
+			result.put("state", user2);
+			return result;
+			
 		}
 }
