@@ -8,6 +8,8 @@ public class SysUser {
 	private String name;
 	private int age;
 	private String sex;
+	private String email;
+	private int phone;
 	public String getUsername() {
 		return username;
 	}
@@ -26,23 +28,28 @@ public class SysUser {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
 	public String getSex() {
 		return sex;
 	}
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public int getPhone() {
+		return phone;
+	}
+	public void setPhone(int phone) {
+		this.phone = phone;
+	}
 	@Override
 	public String toString() {
 		return "SysUser [username=" + username + ", password=" + password + ", name=" + name + ", age=" + age + ", sex="
-				+ sex + "]";
+				+ sex + ", email=" + email + ", phone=" + phone + "]";
 	}
-	
 	
 }
