@@ -3,24 +3,22 @@
 	" http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.swjtuhc.demo.mapper.UserMapper">
 	<insert id="insertUser" parameterType="edu.swjtuhc.demo.model.SysUser">
-		insert into user
-		(username,password,name,age,sex,phone,email)
-		values
-		(#{username},#{password},#{name},#{age},#{sex},#{phone},#{email})
+		insert into  user (u_name,u_nickname,u_password,u_sex,u_email,u_phone)
+	  VALUES(#{u_name},#{u_nickname},#{u_password},#{u_sex},#{u_email},#{u_phone})
 	</insert>
 	<select id="selectUserByUsername" parameterType="java.lang.String" resultType="edu.swjtuhc.demo.model.SysUser">
 		select * from user
 		where 
-		username=#{username}
+		u_name=#{u_name}
 	</select>
 	<select id="userLogin" parameterType="java.lang.String"  resultType="edu.swjtuhc.demo.model.SysUser">
 	     select * from user
 	     where 
-	     username=#{username} 
+		u_name=#{u_name}
 	</select>
 	<select id="selectUserBySysUser" parameterType="java.lang.String"  resultType="edu.swjtuhc.demo.model.SysUser">
 		select * from user 
 		where 
-		username=#{username}
+		u_name=#{u_name}
 	</select>
 </mapper>

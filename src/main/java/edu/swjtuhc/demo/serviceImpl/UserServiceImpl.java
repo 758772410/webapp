@@ -1,6 +1,5 @@
 package edu.swjtuhc.demo.serviceImpl;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +13,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public int register(SysUser user) {
 		// TODO Auto-generated method stub
-		SysUser u1 = userMapper.selectUserByUsername(user.getUsername());
+		SysUser u1 = userMapper.selectUserByUsername(user.getU_name());
 		int i = 1;
 		if (u1==null) {
 			i=userMapper.insertUser(user);
@@ -24,13 +23,13 @@ public class UserServiceImpl implements UserService{
 		return i;
 	}
 	@Override
-	public SysUser userLogin(String username) {
+	public SysUser userLogin(String u_name) {
 		// TODO Auto-generated method stub
-		return userMapper.userLogin(username);
+		return userMapper.userLogin(u_name);
 	}
 	@Override
-	public SysUser selectUser(String username) {
+	public SysUser selectUser(String u_name) {
 		// TODO Auto-generated method stub
-		return userMapper.selectUserBySysUser(username);
+		return userMapper.selectUserBySysUser(u_name);
 	}
 }
